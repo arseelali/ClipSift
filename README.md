@@ -90,12 +90,6 @@ Build both outputs:
 python3 build.py --target all --install-deps --clean
 ```
 
-## Website
-
-The static showcase site lives in [web](web/). It can be opened directly from `web/index.html` or published with a static host such as GitHub Pages.
-
-The hero mockup uses [web/assets/sample-mockup.png](web/assets/sample-mockup.png), a replaceable 1920x1080 placeholder image.
-
 ## Notes
 
 ClipSift stores settings and session state in `~/.ClipSift.json`.
