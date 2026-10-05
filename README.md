@@ -75,7 +75,7 @@ Shortcuts can be customized from the app menu.
 ## Troubleshooting
 
 - **Video preview is unavailable:** video playback needs `ffmpeg`; audio needs `ffplay`. For a downloaded app, [report the problem](https://github.com/arseelali/ClipSift/issues/new?template=bug_report.md) with the app version, macOS version, Mac chip, and file type. For a source build, see [BUILD.md](BUILD.md) for bundling these tools.
-- **A file is missing from the list:** ClipSift lists recognized media files directly inside the selected folder. Hidden files and macOS `._` metadata files are ignored; subfolders are not scanned recursively.
+- **A file is missing from the list:** ClipSift lists recognized media files directly inside the selected folder. Hidden files and macOS `._` metadata files are ignored. To include nested folders, enable **Include Subfolders** in the File menu or Settings.
 - **A rename fails:** check the folder’s write permissions and whether another app has moved or renamed the file.
 
 ## Run from source
