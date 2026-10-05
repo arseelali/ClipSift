@@ -1,23 +1,41 @@
-# ClipSift
+<p align="center">
+  <img src="assets/ClipSift-light.png" width="88" alt="ClipSift app icon">
+</p>
 
-ClipSift is a macOS desktop app for quickly reviewing folders of photos and videos and renaming files one by one. It is built for media cleanup workflows where opening a full editor or file manager preview is too slow.
+# ClipSift — review and rename photos & videos on macOS
 
-Source: [github.com/arseelali/ClipSift](https://github.com/arseelali/ClipSift/)
+Turn a folder of camera filenames into a collection you can recognize. Preview each photo or video, give it a useful name, and press Enter to move on. ClipSift is a desktop app for photographers, video creators, and anyone organizing personal media.
 
-## Features
+**[Download ClipSift 1.0.0 for macOS](https://github.com/arseelali/ClipSift/releases/download/v1.0.0/ClipSift-1.0.0-macOS.dmg)** · [Latest release & notes](https://github.com/arseelali/ClipSift/releases/latest) · [Website](https://arseelali.github.io/ClipSift/web/) · [Report a problem](https://github.com/arseelali/ClipSift/issues/new?template=bug_report.md)
 
-- Open a media folder from the app menu or toolbar.
-- Preview photos normally and play video previews in the app.
-- Rename the current file by entering a new filename without the extension.
-- Leave the rename box blank to skip a file.
-- Jump to any file with the built-in file list and search box.
-- Use video speed controls from `1x` to `8x`.
-- Configure frame rate per video speed in Settings.
-- Toggle video mute for the session.
-- Fullscreen the current media preview.
-- Undo the last rename.
-- Ignore hidden files and macOS `._` metadata files.
-- Build a macOS `.app` and drag-to-Applications `.dmg` installer.
+![ClipSift showing a video preview, searchable file list, filename field, and playback controls](web/assets/demo.png)
+
+## Why use ClipSift?
+
+- **Review faster:** play video previews at 1×, 2×, 4×, or 8×, with pause, mute, and fullscreen controls.
+- **Name files as you review:** type only the new name; ClipSift keeps the extension and advances to the next file. Leave the box blank to skip.
+- **Stay in one window:** preview media, search the file list, open a file in its default app, or reveal it in Finder.
+- **Keep your place:** resume from the last folder and file, recall your previous filename input, and undo renames during the session.
+- **Work locally:** media is processed on your Mac without an upload or account workflow. Settings and session state are saved in `~/.ClipSift.json`.
+
+Use it to label clips before an edit, review a camera shoot, or organize a folder of family photos and travel videos. For example, rename `IMG_2048.JPG` to `lake-at-sunset.JPG` while keeping the original image contents.
+
+## Install on macOS
+
+1. [Download the DMG](https://github.com/arseelali/ClipSift/releases/download/v1.0.0/ClipSift-1.0.0-macOS.dmg), or find it under **Assets** on the [latest release](https://github.com/arseelali/ClipSift/releases/latest).
+2. Open the DMG and drag **ClipSift.app** into **Applications**.
+3. Launch ClipSift from Applications, then choose **Open Folder…**.
+
+The downloadable package is for macOS. Windows and Linux installers are not currently provided. If macOS blocks first launch, review [Apple’s guidance for safely opening downloaded apps](https://support.apple.com/102445).
+
+## Try your first folder
+
+1. Choose a small folder of photos or videos. Rename changes the actual filenames, so use a copy of the folder for your first try.
+2. Preview the current file and type a descriptive name without its extension.
+3. Press **Enter** to rename and advance. Press **Enter** with an empty field to skip without renaming.
+4. Use **Command-Z** to undo the last rename during the current session.
+
+ClipSift renames files in place; it does not edit their media contents. Skipping does not delete a file. If a name already exists, the app offers an available alternative instead of silently replacing it.
 
 ## Supported Media
 
@@ -33,21 +51,7 @@ Videos:
 .mp4 .mov .m4v .avi .mkv .webm .wmv .flv .mpeg .mpg .3gp .mts .m2ts
 ```
 
-## Running From Source
-
-Requirements:
-
-- macOS
-- Python 3
-- Tkinter, included with most standard Python installers
-- `ffmpeg` for video previews
-- `ffplay` for video audio, optional
-
-Run the app:
-
-```bash
-python3 ClipSift.py
-```
+Preview availability depends on the file format and the decoders available on your Mac. Recognizing an extension does not guarantee that every codec or RAW file can be previewed. Use **Command-O** to open the current file in its default app when an in-app preview is unavailable.
 
 ## Common Shortcuts
 
@@ -68,35 +72,26 @@ python3 ClipSift.py
 
 Shortcuts can be customized from the app menu.
 
-## Building
+## Troubleshooting
 
-See [BUILD.md](BUILD.md) for full build details.
+- **Video preview is unavailable:** video playback needs `ffmpeg`; audio needs `ffplay`. For a downloaded app, [report the problem](https://github.com/arseelali/ClipSift/issues/new?template=bug_report.md) with the app version, macOS version, Mac chip, and file type. For a source build, see [BUILD.md](BUILD.md) for bundling these tools.
+- **A file is missing from the list:** ClipSift lists recognized media files directly inside the selected folder. Hidden files and macOS `._` metadata files are ignored; subfolders are not scanned recursively.
+- **A rename fails:** check the folder’s write permissions and whether another app has moved or renamed the file.
 
-Build the app bundle:
+## Run from source
 
-```bash
-python3 build.py --install-deps --clean
-```
-
-Build the macOS DMG installer:
+For developers, use Python 3.10 or later with Tkinter, plus `ffmpeg` for video previews and optional `ffplay` for audio. The packaged app is the easiest starting point for macOS users.
 
 ```bash
-python3 build.py --target macos-installer --install-deps --clean
+git clone https://github.com/arseelali/ClipSift.git
+cd ClipSift
+python3 ClipSift.py
 ```
 
-Build both outputs:
+See [BUILD.md](BUILD.md) to build a macOS app or DMG.
 
-```bash
-python3 build.py --target all --install-deps --clean
-```
+## Help improve ClipSift
 
-## Notes
+[Report a bug](https://github.com/arseelali/ClipSift/issues/new?template=bug_report.md) or [suggest a feature](https://github.com/arseelali/ClipSift/issues/new?template=feature_request.md). Tell us what you were trying to organize and what would make that workflow easier. Use sample media and remove personal paths from screenshots or logs.
 
-ClipSift stores settings and session state in `~/.ClipSift.json`.
-
-If video previews do not work in a packaged app, rebuild from a Mac where `ffmpeg` and `ffplay` are installed and visible in the terminal:
-
-```bash
-which ffmpeg ffplay
-python3 build.py --target all --install-deps --clean
-```
+If ClipSift is useful to you, star the repository to find it again, share it with someone who reviews media folders, or watch **Releases** on GitHub for updates.
