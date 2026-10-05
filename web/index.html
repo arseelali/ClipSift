@@ -3,9 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="ClipSift is a fast desktop tool for reviewing photos and videos, previewing media, and renaming files one by one.">
+    <meta name="description" content="Review and rename photos and videos on your Mac. ClipSift combines local previews, 1×–8× video playback, and a keyboard workflow. Download the macOS app.">
+    <link rel="canonical" href="https://arseelali.github.io/ClipSift/web/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ClipSift — Review and rename photos &amp; videos on macOS">
+    <meta property="og:description" content="Give camera clips and personal media useful names. Preview, rename, skip, repeat — all on your Mac.">
+    <meta property="og:url" content="https://arseelali.github.io/ClipSift/web/">
+    <meta property="og:image" content="https://arseelali.github.io/ClipSift/web/assets/social-preview.png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="640">
+    <meta property="og:image:alt" content="ClipSift: review and rename photos and videos on macOS">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ClipSift — Review and rename photos &amp; videos on macOS">
+    <meta name="twitter:description" content="Preview photos and videos, rename files, and move through your media folder without breaking focus.">
+    <meta name="twitter:image" content="https://arseelali.github.io/ClipSift/web/assets/social-preview.png">
     <meta name="theme-color" content="#0f172a">
-    <title>ClipSift | Fast Media Review and Rename Tool</title>
+    <title>ClipSift — Photo &amp; Video Review and Rename App for macOS</title>
     <link rel="icon" href="assets/clipsift-light.png">
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -18,7 +31,7 @@
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#features">Features</a>
         <a href="#workflow">Workflow</a>
-        <a href="#install">Install</a>
+        <a href="#install">Download</a>
         <a href="https://github.com/arseelali/ClipSift/">GitHub</a>
       </nav>
       <button class="theme-toggle" type="button" aria-label="Toggle color theme">
@@ -30,15 +43,16 @@
       <section class="hero section-band">
         <div class="hero-copy">
           <img class="hero-icon" src="assets/clipsift-light.png" alt="ClipSift app icon">
-          <p class="eyebrow">Desktop media triage</p>
+          <p class="eyebrow">Photo &amp; video organizer for macOS</p>
           <h1>ClipSift</h1>
           <p class="lead">
-            Review folders of photos and videos quickly, preview each file, rename the keepers, and move through a batch without breaking focus.
+            Give your photos and videos names you can find again. Preview each file, rename it, and move on — whether you’re preparing an edit or organizing family memories.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="https://github.com/arseelali/ClipSift/">View on GitHub</a>
-            <a class="button secondary" href="#install">Build installers</a>
+            <a class="button primary" href="https://github.com/arseelali/ClipSift/releases/download/v1.0.0/ClipSift-1.0.0-macOS.dmg">Download for macOS</a>
+            <a class="button secondary" href="#workflow">See how it works</a>
           </div>
+          <p class="download-note">Version 1.0.0 · Drag-to-Applications installer · <a href="https://github.com/arseelali/ClipSift/releases/latest">Release notes</a></p>
           <dl class="quick-stats" aria-label="ClipSift highlights">
             <div>
               <dt>1x-8x</dt>
@@ -46,7 +60,7 @@
             </div>
             <div>
               <dt>macOS</dt>
-              <dd>Native app packaging</dd>
+              <dd>Desktop app</dd>
             </div>
             <div>
               <dt>Local</dt>
@@ -56,7 +70,7 @@
         </div>
 
         <div class="mockup-frame" aria-label="ClipSift application screenshot demo">
-          <img src="assets/demo.png" alt="1920 by 1080 ClipSift Demo">
+          <img src="assets/demo.png" alt="ClipSift showing a video preview, searchable file list, filename field, and playback controls" width="3644" height="2370" fetchpriority="high">
         </div>
       </section>
 
@@ -79,8 +93,8 @@
             <p>Leave the rename box blank to skip. Use the file list and search box to jump directly to any media item in the folder.</p>
           </article>
           <article class="feature-card">
-            <h3>macOS-native packaging</h3>
-            <p>Build a signed app bundle and a drag-to-Applications DMG with custom installer artwork.</p>
+            <h3>Your files stay local</h3>
+            <p>Review media on your Mac without an upload or account workflow. Rename files in place while keeping their original contents.</p>
           </article>
         </div>
       </section>
@@ -94,7 +108,7 @@
           <article>
             <span>01</span>
             <h3>Open a folder</h3>
-            <p>Choose a media folder from the app menu or toolbar. Hidden files and macOS metadata files are ignored.</p>
+            <p>Choose a media folder from the app menu or toolbar. Try a copy first: renaming changes the actual filenames.</p>
           </article>
           <article>
             <span>02</span>
@@ -104,29 +118,28 @@
           <article>
             <span>03</span>
             <h3>Rename or skip</h3>
-            <p>Enter the next clean filename or leave the box empty. The file list updates immediately after each rename.</p>
+            <p>Type a name without the extension and press Enter. Leave the box blank to skip, or use Command-Z to undo a rename during the session.</p>
           </article>
         </div>
       </section>
 
       <section id="install" class="section install-section">
         <div class="section-heading">
-          <p class="eyebrow">Distribution</p>
-          <h2>Build app packages and installers</h2>
+          <p class="eyebrow">Get started</p>
+          <h2>Download. Open a folder. Start reviewing.</h2>
         </div>
         <div class="install-layout">
           <div class="installer-preview">
             <img src="assets/dmg-background.png" alt="ClipSift macOS drag-and-drop installer background">
           </div>
           <div class="install-copy">
-            <h3>macOS app and DMG output</h3>
+            <h3>Install ClipSift on your Mac</h3>
             <p>
-              The build script creates a macOS app bundle and a styled drag-to-Applications DMG. Icons and installer artwork are included in the repository.
+              Download the DMG, drag ClipSift into Applications, then launch it and choose Open Folder. No source build is needed to try the app.
             </p>
-            <div class="command-list" aria-label="Build commands">
-              <code>python3 build.py --target macos-installer --install-deps --clean</code>
-            </div>
-            <a class="button primary" href="https://github.com/arseelali/ClipSift/">Open repository</a>
+            <a class="button primary" href="https://github.com/arseelali/ClipSift/releases/download/v1.0.0/ClipSift-1.0.0-macOS.dmg">Download ClipSift 1.0.0</a>
+            <p class="download-note"><a href="https://github.com/arseelali/ClipSift/releases/latest">All release details</a> · <a href="https://github.com/arseelali/ClipSift/blob/main/BUILD.md">Build from source</a></p>
+            <p class="download-note">macOS package only. If macOS blocks first launch, review <a href="https://support.apple.com/102445">Apple’s guidance for downloaded apps</a>.</p>
           </div>
         </div>
       </section>
@@ -134,7 +147,8 @@
       <section class="section source-section">
         <div>
           <p class="eyebrow">Source available</p>
-          <h2>Fork it, inspect it, build it locally.</h2>
+          <h2>Help make your next media review easier.</h2>
+          <p>Report a problem, suggest a workflow improvement, or share ClipSift with someone sorting their photos and videos.</p>
         </div>
         <a class="button secondary" href="https://github.com/arseelali/ClipSift/">github.com/arseelali/ClipSift</a>
       </section>
@@ -142,6 +156,7 @@
 
     <footer class="site-footer">
       <span>ClipSift</span>
+      <a href="https://github.com/arseelali/ClipSift/issues/new?template=bug_report.md">Report a problem</a>
       <a href="https://github.com/arseelali/ClipSift/">GitHub</a>
     </footer>
 

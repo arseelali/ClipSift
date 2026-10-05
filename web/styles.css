@@ -49,6 +49,26 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 4px;
+}
+
+.download-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.download-note a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+section[id] {
+  scroll-margin-top: 90px;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -232,7 +252,8 @@ h3 {
 }
 
 .mockup-frame img {
-  width: auto;
+  width: 100%;
+  height: auto;
 }
 
 .section {
@@ -338,6 +359,17 @@ h3 {
 
 .source-section h2 {
   margin: 0;
+}
+
+.source-section p {
+  max-width: 60ch;
+  margin: 16px 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 .source-section .button {
